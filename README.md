@@ -9,7 +9,7 @@ The idea is to create a timed quiz application that asks questions about javascr
 
 1. The user should be greeted with a page that describes the application (a quiz, along with how it works with the timer and score system)
 2. There will be a button to start the quiz 
-3. On clicking the button, the original text and header will hide itself via css giving way to a quiz question and four multiple choice responses
+3. On clicking the button, the header and button will hide itself giving way to a quiz question and four multiple choice responses
 - A timer will also begin at this time and start counting down
 - If at any point the timer reaches 0 the quiz will end and skip to step 6 and 7 of this readme
 4. The user can hover over the responses and see a background color change to make it clear which answer they have selected

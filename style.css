@@ -1,0 +1,18 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+.hiscore {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
