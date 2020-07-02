@@ -45,3 +45,7 @@ ul:hover {
     display: flex;
     justify-content: center;
 }
+
+.hidden {
+    display: none;
+}
