@@ -51,3 +51,11 @@ ul:hover {
 .hidden {
     display: none;
 }
+
+.wrong {
+    background-color: red;
+}
+
+.wrong:hover {
+    background-color:red;
+}

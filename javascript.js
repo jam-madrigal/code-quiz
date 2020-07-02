@@ -14,12 +14,18 @@ var answer2 = document.getElementById("a2");
 var answer3 = document.getElementById("a3");
 var answer4 = document.getElementById("a4");
 
-// Adding even listeners for the answers/responses
-answer1.addEventListener("click");
-answer2.addEventListener("click");
-answer3.addEventListener("click");
-answer4.addEventListener("click");
+// When an ansewr correct, returns the responses and questions to default
+function answerCorrect() {
+    answer1.classList.remove("wrong");
+    answer2.classList.remove("wrong");
+    answer3.classList.remove("wrong");
+    answer4.classList.remove("wrong");
+    
+}
 
+function answerWrong() {
+    this.classList.add("wrong");
+}
 
 // Functions
 // Starts the quiz
@@ -35,8 +41,23 @@ function startQuiz() {
 function firstQuestion() {
     questionsElement.textContent=("What is x?");
     answer1.textContent=("Test") 
-    answer2.textContent=("Test") 
+    answer2.textContent=("Test")
     answer3.textContent=("Test") 
-    answer4.textContent=("Test") 
+    answer4.textContent=("Test")
+    
+    // Adding event listeners for the answers/responses
+    answer1.addEventListener("click", answerWrong);
+    answer2.addEventListener("click", answerCorrect);
+    answer3.addEventListener("click", answerWrong);
+    answer4.addEventListener("click", answerWrong);
 
+}
+
+function secondQuestion() {
+    questionsElement.textContent=("What is 2?");
+    answer1.textContent=("Test2") 
+    answer2.textContent=("Test2") 
+    answer3.textContent=("Test2") 
+    answer4.textContent=("Test2") 
+  
 }
