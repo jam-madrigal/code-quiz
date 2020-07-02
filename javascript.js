@@ -3,8 +3,16 @@ var startBtn = document.getElementById("startbtn");
 
 startBtn.addEventListener("click", startQuiz);
 
+// Identifying the element that holes the question and quiz explanations
+var questionsElement = document.getElementById("questions");
+
+// Identifying the element that holds the responses
+var answersElement = document.getElementById("responses");
+
+// Functions
 // Starts the quiz
 function startQuiz() {
     startBtn.classList.add("hidden");
+    questionsElement.textContent="";
 }
 
