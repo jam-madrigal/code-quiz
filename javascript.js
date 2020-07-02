@@ -14,10 +14,11 @@ var answer2 = document.getElementById("a2");
 var answer3 = document.getElementById("a3");
 var answer4 = document.getElementById("a4");
 
-// When an ansewr correct, returns the responses and questions to default
+// When an answer is correct for a given question, returns the responses and questions to default and proceeds to the next question
 function answerCorrect() {
     answer1.classList.remove("wrong");
     answer2.classList.remove("wrong");
+        answer2.removeEventListener("click", answerCorrect)
     answer3.classList.remove("wrong");
     answer4.classList.remove("wrong");
 
@@ -27,6 +28,35 @@ function answerCorrect() {
         secondQuestion();
     }
 }
+
+function answerCorrect2() {
+    answer1.classList.remove("wrong");
+    answer2.classList.remove("wrong");
+    answer3.classList.remove("wrong");
+        answer3.removeEventListener("click", answerCorrect)
+    answer4.classList.remove("wrong");
+
+    let i = true; 
+
+    if (i === true) {
+        thirdQuestion();
+    }
+}
+
+function answerCorrect3() {
+    answer1.classList.remove("wrong");
+    answer2.classList.remove("wrong");
+    answer3.classList.remove("wrong");
+        answer3.removeEventListener("click", answerCorrect)
+    answer4.classList.remove("wrong");
+
+    let i = true; 
+
+    if (i === true) {
+    }
+}
+
+// If the response is wrong, make the background of the response red
 
 function answerWrong() {
     this.classList.add("wrong");
@@ -69,7 +99,22 @@ function secondQuestion() {
     // Adding event listeners for the answers/responses
     answer1.addEventListener("click", answerWrong);
     answer2.addEventListener("click", answerWrong);
-    answer3.addEventListener("click", answerCorrect);
+    answer3.addEventListener("click", answerCorrect2);
+    answer4.addEventListener("click", answerWrong);    
+  
+}
+
+function thirdQuestion() {
+    questionsElement.textContent=("What is 3?");
+    answer1.textContent=("Test3") 
+    answer2.textContent=("Test3") 
+    answer3.textContent=("Test3") 
+    answer4.textContent=("Test3") 
+
+    // Adding event listeners for the answers/responses
+    answer1.addEventListener("click", answerWrong);
+    answer2.addEventListener("click", answerWrong);
+    answer3.addEventListener("click", answerCorrect3);
     answer4.addEventListener("click", answerWrong);    
   
 }
