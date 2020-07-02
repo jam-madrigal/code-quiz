@@ -12,7 +12,7 @@ h2 {
 }
 
 .hiscore {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 }
@@ -21,4 +21,15 @@ h2 {
     flex-direction: column;
     padding-left: 25%;
     font-size: 20px;
+}
+
+ul {
+    height: 40px;
+    width: 50%;
+    padding-top: 20px;
+}
+
+ul:hover {
+    background-color: silver;
+
 }
