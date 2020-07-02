@@ -34,6 +34,8 @@ ul {
     width: 50%;
     padding-top: 20px;
     margin:auto;
+    font-weight: bold;
+    font-size: large;
 }
 
 ul:hover {
