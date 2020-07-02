@@ -20,7 +20,12 @@ function answerCorrect() {
     answer2.classList.remove("wrong");
     answer3.classList.remove("wrong");
     answer4.classList.remove("wrong");
-    
+
+    let i = true; 
+
+    if (i === true) {
+        secondQuestion();
+    }
 }
 
 function answerWrong() {
@@ -53,11 +58,18 @@ function firstQuestion() {
 
 }
 
+// Displays the second question
 function secondQuestion() {
     questionsElement.textContent=("What is 2?");
     answer1.textContent=("Test2") 
     answer2.textContent=("Test2") 
     answer3.textContent=("Test2") 
     answer4.textContent=("Test2") 
+
+    // Adding event listeners for the answers/responses
+    answer1.addEventListener("click", answerWrong);
+    answer2.addEventListener("click", answerWrong);
+    answer3.addEventListener("click", answerCorrect);
+    answer4.addEventListener("click", answerWrong);    
   
 }
