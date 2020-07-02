@@ -5,5 +5,6 @@ startBtn.addEventListener("click", startQuiz);
 
 // Starts the quiz
 function startQuiz() {
+    startBtn.classList.add("hidden");
 }
 
