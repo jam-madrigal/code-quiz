@@ -23,7 +23,7 @@ var scoreTime = timerScore.textContent;
 
 // Creating an object that will hold submissions for high scores
 
-// ******* Dunno what to do with this yet, how to make it update and change and save sequential scores in local storage
+// ******* Dunno what to do with this yet, how to make it update and change and save sequential scores in local storage? not sure how
 
 // var userScores = {
 //     Name: userName.value.trim(),
@@ -36,6 +36,8 @@ function saveScore() {
     localStorage.setItem("username", userName.value);
       // add something here that saves the remaining timer value for high scores
       localStorage.setItem()
+
+    //   perhaps make this generate an element based on the submission and add it to a new div in a list that hides behind the high scores button? easy way to create and "store" a high scores list
     }
 
 
