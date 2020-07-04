@@ -9,13 +9,28 @@ var questionsElement = document.getElementById("qh2");
 // Identifying the element that holds the responses and the responses by id
 var answersElement = document.getElementById("responses");
 
+
+
 // Identifying the high score form element, name submission element, and submit button element
 var scoreElement = document.getElementById("highscore");
 var userName = document.getElementById("userName");
 var submit = document.getElementById("submitBtn");
-    submit.addEventListener("click", saveScore;
+    submit.addEventListener("click", saveScore);
+
+// How to calculate high scores **** need to make a function after making a timer that saves the timeremaining
+var scoreValue = timeremaining
+
+// Creating an object that will hold submissions for high scores
+var userScores = {
+    Name: userName.value.trim(),
+    Score: timeRemaining.value
+  };
 
 // What the submit button will do
+function saveScore() {
+    localStorage.setItem("username", userName.value);
+    // add something here that stores the remaining timer value
+}
 
 
 
