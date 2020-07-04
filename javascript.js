@@ -18,7 +18,6 @@ var answer4 = document.getElementById("a4");
 function answerCorrect() {
     answer1.classList.remove("wrong");
     answer2.classList.remove("wrong");
-        answer2.removeEventListener("click", answerCorrect)
     answer3.classList.remove("wrong");
     answer4.classList.remove("wrong");
 
@@ -32,8 +31,8 @@ function answerCorrect() {
 function answerCorrect2() {
     answer1.classList.remove("wrong");
     answer2.classList.remove("wrong");
+        answer2.removeEventListener("click", answerCorrect)
     answer3.classList.remove("wrong");
-        answer3.removeEventListener("click", answerCorrect)
     answer4.classList.remove("wrong");
 
     let i = true; 
@@ -47,7 +46,35 @@ function answerCorrect3() {
     answer1.classList.remove("wrong");
     answer2.classList.remove("wrong");
     answer3.classList.remove("wrong");
-        answer3.removeEventListener("click", answerCorrect)
+        answer3.removeEventListener("click", answerCorrect2)
+    answer4.classList.remove("wrong");
+
+    let i = true; 
+
+    if (i === true) {
+        fourthQuestion();
+    }
+}
+
+function answerCorrect4() {
+    answer1.classList.remove("wrong");
+    answer2.classList.remove("wrong");
+    answer3.classList.remove("wrong");
+        answer3.removeEventListener("click", answerCorrect3)
+    answer4.classList.remove("wrong");
+
+    let i = true; 
+
+    if (i === true) {
+        fifthQuestion();
+    }
+}
+
+function answerCorrect5() {
+    answer1.classList.remove("wrong");
+        answer1.removeEventListener("click", answerCorrect4)
+    answer2.classList.remove("wrong");
+    answer3.classList.remove("wrong");
     answer4.classList.remove("wrong");
 
     let i = true; 
@@ -115,6 +142,36 @@ function thirdQuestion() {
     answer1.addEventListener("click", answerWrong);
     answer2.addEventListener("click", answerWrong);
     answer3.addEventListener("click", answerCorrect3);
+    answer4.addEventListener("click", answerWrong);    
+  
+}
+
+function fourthQuestion() {
+    questionsElement.textContent=("What is 4?");
+    answer1.textContent=("Test4") 
+    answer2.textContent=("Test4") 
+    answer3.textContent=("Test4") 
+    answer4.textContent=("Test4") 
+
+    // Adding event listeners for the answers/responses
+    answer1.addEventListener("click", answerCorrect4);
+    answer2.addEventListener("click", answerWrong);
+    answer3.addEventListener("click", answerWrong);
+    answer4.addEventListener("click", answerWrong);    
+  
+}
+
+function fifthQuestion() {
+    questionsElement.textContent=("What is 5?");
+    answer1.textContent=("Test5") 
+    answer2.textContent=("Test5") 
+    answer3.textContent=("Test5") 
+    answer4.textContent=("Test5") 
+
+    // Adding event listeners for the answers/responses
+    answer1.addEventListener("click", answerWrong);
+    answer2.addEventListener("click", answerCorrect5);
+    answer3.addEventListener("click", answerWrong);
     answer4.addEventListener("click", answerWrong);    
   
 }
