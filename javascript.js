@@ -3,13 +3,14 @@ var startBtn = document.getElementById("startbtn");
 
 startBtn.addEventListener("click", startQuiz);
 
+// Identifying the element that holds the timer, whose number value will be saved for scores
+var timerScore = document.getElementById("timer");
+
 // Identifying the element that holds the question and quiz explanations
 var questionsElement = document.getElementById("qh2");
 
 // Identifying the element that holds the responses and the responses by id
 var answersElement = document.getElementById("responses");
-
-
 
 // Identifying the high score form element, name submission element, and submit button element
 var scoreElement = document.getElementById("highscore");
@@ -17,20 +18,26 @@ var userName = document.getElementById("userName");
 var submit = document.getElementById("submitBtn");
     submit.addEventListener("click", saveScore);
 
-// How to calculate high scores **** need to make a function after making a timer that saves the timeremaining
-var scoreValue = timeremaining
+// How to calculate high scores **** need to edit once timer is made, placeholder textContent value for now to avoid errors
+var scoreTime = timerScore.textContent;
 
 // Creating an object that will hold submissions for high scores
-var userScores = {
-    Name: userName.value.trim(),
-    Score: timeRemaining.value
-  };
+
+// ******* Dunno what to do with this yet, how to make it update and change and save sequential scores in local storage
+
+// var userScores = {
+//     Name: userName.value.trim(),
+//     Score: scoreTime.value
+//   };
 
 // What the submit button will do
 function saveScore() {
+
     localStorage.setItem("username", userName.value);
-    // add something here that stores the remaining timer value
-}
+      // add something here that saves the remaining timer value for high scores
+      localStorage.setItem()
+    }
+
 
 
 
