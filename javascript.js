@@ -9,6 +9,17 @@ var questionsElement = document.getElementById("qh2");
 // Identifying the element that holds the responses and the responses by id
 var answersElement = document.getElementById("responses");
 
+// Identifying the high score form element, name submission element, and submit button element
+var scoreElement = document.getElementById("highscore");
+var userName = document.getElementById("userName");
+var submit = document.getElementById("submitBtn");
+    submit.addEventListener("click", saveScore;
+
+// What the submit button will do
+
+
+
+// Idenitfying each answer element
 var answer1 = document.getElementById("a1");
 var answer2 = document.getElementById("a2");
 var answer3 = document.getElementById("a3");
@@ -79,7 +90,12 @@ function answerCorrect5() {
 
     let i = true; 
 
+    // Hide the responses, change the question to Congratulations! Enter your name for high scores.
     if (i === true) {
+        questionsElement.textContent=("Congratulations! Enter your name or initials for high scores.");
+        answersElement.classList.add("hidden");
+        scoreElement.classList.remove("hidden");
+
     }
 }
 
