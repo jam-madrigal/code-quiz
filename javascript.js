@@ -138,24 +138,24 @@ function startQuiz() {
 
     firstQuestion();
 
-    let timeLeft = 75;
+    let timeLeft = 3;
 
     // A function to start the timer
-    setInterval(function() {
+    var goTime = setInterval(function() {
         timeLeft = timeLeft - 1;
         timerScore.textContent = "Time: " + timeLeft;
-        if (timeLeft <=0);
-            stopQuiz;
+        // Ends the quiz if timer reaches
+        if (timeLeft <= 0) {
+            answerCorrect5();
+            clearInterval(goTime);
+        }
+
     },
     1000);
     
 
 }
 
-// Function to end the quiz
-function stopQuiz() {
-
-}
 
 // Displays the first question
 function firstQuestion() {
