@@ -49,6 +49,10 @@ var answer2 = document.getElementById("a2");
 var answer3 = document.getElementById("a3");
 var answer4 = document.getElementById("a4");
 
+// A boolean that determines if the quiz is over or not, for calling back to stop the timer on more than one condition
+var quizDone;
+
+
 // When an answer is correct for a given question, returns the responses and questions to default and proceeds to the next question
 function answerCorrect() {
     answer1.classList.remove("wrong");
@@ -106,6 +110,8 @@ function answerCorrect4() {
 }
 
 function answerCorrect5() {
+    quizDone = true;
+
     answer1.classList.remove("wrong");
         answer1.removeEventListener("click", answerCorrect4)
     answer2.classList.remove("wrong");
@@ -138,7 +144,7 @@ function startQuiz() {
 
     firstQuestion();
 
-    let timeLeft = 3;
+    let timeLeft = 75;
 
     // A function to start the timer
     var goTime = setInterval(function() {
@@ -147,6 +153,10 @@ function startQuiz() {
         // Ends the quiz if timer reaches
         if (timeLeft <= 0) {
             answerCorrect5();
+            clearInterval(goTime);
+        }
+
+        if (quizDone === true) {
             clearInterval(goTime);
         }
 
