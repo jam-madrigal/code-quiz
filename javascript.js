@@ -12,9 +12,11 @@ var questionsElement = document.getElementById("qh2");
 // Identifying the element that holds the responses and the responses by id
 var answersElement = document.getElementById("responses");
 
-// Identifying the high score form element, back button element, name submission element, and submit button element
-var scoreElement = document.getElementById("scoreBtn");
-    scoreElement.addEventListener("click", scoreShow);
+// Identifying the high score form/button element, back button element, name submission element, and submit button element
+var scoreElement = document.getElementById("scores");
+
+var scoreBtn = document.getElementById("scoreBtn");
+    scoreBtn.addEventListener("click", scoreShow);
 
 var back = document.getElementById("backBtn");
     back.addEventListener("click", scoreHide);
@@ -26,10 +28,12 @@ var submit = document.getElementById("submitBtn");
 
 // When the high score button is clicked, hide everything but the list of high scores, back button undoes this
 function scoreShow() {
-    scoreElement.classList.remove("hidden");
     questionsElement.classList.add("hidden");
     answersElement.classList.add("hidden");
     startBtn.classList.add("hidden");
+    scoreElement.classList.remove("hidden");
+    scoreElement.classList.add("scoreList");
+    back.classList.remove("hidden");
 }
 
 function scoreHide() {
