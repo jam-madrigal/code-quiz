@@ -13,6 +13,8 @@ var questionsElement = document.getElementById("qh2");
 var answersElement = document.getElementById("responses");
 
 // Identifying the high score form/button element, back button element, name submission element, and submit button element
+var scoreForm = document.getElementById("highscore");
+
 var scoreElement = document.getElementById("scores");
 
 var scoreBtn = document.getElementById("scoreBtn");
@@ -25,6 +27,9 @@ var userName = document.getElementById("userName");
 
 var submit = document.getElementById("submitBtn");
     submit.addEventListener("click", saveScore);
+
+// Element to create list of scores
+var scoreRecord = document.getElementById("makeUL");
 
 // When the high score button is clicked, hide everything but the list of high scores, back button undoes this
 function scoreShow() {
@@ -47,7 +52,6 @@ function scoreHide() {
 
 
 // How to calculate high scores **** need to edit once timer is made, placeholder textContent value for now to avoid errors
-var scoreTime = timerScore.textContent;
 
 // Creating an object that will hold submissions for high scores
 
@@ -60,13 +64,13 @@ var scoreTime = timerScore.textContent;
 
 // What the submit button will do
 function saveScore() {
-
     localStorage.setItem("username", userName.value);
-      // add something here that saves the remaining timer value for high scores
-      localStorage.setItem()
+    var ul = document.createElement("ul");
+    ul.innerHTML = userName.value + " " + " " + " " + timerScore.textContent;
+    scoreRecord.appendChild(ul);
 
-    //   perhaps make this generate an element based on the submission and add it to a new div in a list that hides behind the high scores button? easy way to create and "store" a high scores list
-    }
+
+}
 
 
 
@@ -154,8 +158,7 @@ function answerCorrect5() {
     if (i === true) {
         questionsElement.textContent=("Congratulations! Enter your name or initials for high scores.");
         answersElement.classList.add("hidden");
-        scoreElement.classList.remove("hidden");
-
+        scoreForm.classList.remove("hidden");
     }
 }
 
