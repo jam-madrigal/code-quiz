@@ -12,11 +12,35 @@ var questionsElement = document.getElementById("qh2");
 // Identifying the element that holds the responses and the responses by id
 var answersElement = document.getElementById("responses");
 
-// Identifying the high score form element, name submission element, and submit button element
-var scoreElement = document.getElementById("highscore");
+// Identifying the high score form element, back button element, name submission element, and submit button element
+var scoreElement = document.getElementById("scoreBtn");
+    scoreElement.addEventListener("click", scoreShow);
+
+var back = document.getElementById("backBtn");
+    back.addEventListener("click", scoreHide);
+
 var userName = document.getElementById("userName");
+
 var submit = document.getElementById("submitBtn");
     submit.addEventListener("click", saveScore);
+
+// When the high score button is clicked, hide everything but the list of high scores, back button undoes this
+function scoreShow() {
+    scoreElement.classList.remove("hidden");
+    questionsElement.classList.add("hidden");
+    answersElement.classList.add("hidden");
+    startBtn.classList.add("hidden");
+}
+
+function scoreHide() {
+    scoreElement.classList.add("hidden");
+    back.classList.add("hidden");
+    questionsElement.classList.remove("hidden");
+    startBtn.classList.remove("hidden");
+}
+
+
+
 
 // How to calculate high scores **** need to edit once timer is made, placeholder textContent value for now to avoid errors
 var scoreTime = timerScore.textContent;
@@ -39,6 +63,8 @@ function saveScore() {
 
     //   perhaps make this generate an element based on the submission and add it to a new div in a list that hides behind the high scores button? easy way to create and "store" a high scores list
     }
+
+
 
 
 
