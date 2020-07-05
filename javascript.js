@@ -137,6 +137,24 @@ function startQuiz() {
     answersElement.classList.remove("hidden");
 
     firstQuestion();
+
+    let timeLeft = 75;
+
+    // A function to start the timer
+    setInterval(function() {
+        timeLeft = timeLeft - 1;
+        timerScore.textContent = "Time: " + timeLeft;
+        if (timeLeft <=0);
+            stopQuiz;
+    },
+    1000);
+    
+
+}
+
+// Function to end the quiz
+function stopQuiz() {
+
 }
 
 // Displays the first question
