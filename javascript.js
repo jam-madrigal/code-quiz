@@ -49,7 +49,7 @@ var answer2 = document.getElementById("a2");
 var answer3 = document.getElementById("a3");
 var answer4 = document.getElementById("a4");
 
-// A boolean that determines if the quiz is over or not, for calling back to stop the timer on more than one condition
+// A variable for a boolean that determines if the quiz is over or not, for calling back to stop the timer on more than one condition
 var quizDone;
 
 
@@ -130,12 +130,10 @@ function answerCorrect5() {
 }
 
 // If the response is wrong, make the background of the response red
-
 function answerWrong() {
     this.classList.add("wrong");
 }
 
-// Functions
 // Starts the quiz
 function startQuiz() {
     startBtn.classList.add("hidden");

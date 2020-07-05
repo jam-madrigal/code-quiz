@@ -17,6 +17,13 @@ h2 {
     left: 0;
 }
 
+.scoreList {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+}
+
 .timer {
     position: absolute;
     top: 0;
@@ -29,7 +36,7 @@ h2 {
     font-size: 20px;
 }
 
-ul {
+main ul {
     height: 40px;
     width: 50%;
     padding-top: 20px;
@@ -38,7 +45,7 @@ ul {
     font-size: large;
 }
 
-ul:hover {
+main ul:hover {
     background-color: silver;
 
 }
