@@ -291,9 +291,9 @@ function fourthQuestion() {
 function fifthQuestion() {
     questionsElement.textContent=("Which of the following will provide the user with a box in which to type?");
     answer1.textContent=("alert(\"Hello)");
-    answer2.textContent=("prompt(\"What is your name?)");
-    answer3.textContent=(".addEventListener(\"KeyboardEvent)"); 
-    answer4.textContent=(".textContent=(\"Type here)");
+    answer2.textContent=("prompt(\"What is your name?\")");
+    answer3.textContent=(".addEventListener(\"KeyboardEvent\")"); 
+    answer4.textContent=(".textContent=(\"Type here\")");
 
     // Adding event listeners for the answers/responses
     answer1.removeEventListener("click", answerCorrect4);
