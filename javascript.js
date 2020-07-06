@@ -64,12 +64,11 @@ function scoreHide() {
 
 // What the submit button will do
 function saveScore() {
+    event.preventDefault();
     localStorage.setItem("username", userName.value);
     var ul = document.createElement("ul");
     ul.innerHTML = userName.value + " " + " " + " " + timerScore.textContent;
-    scoreRecord.appendChild(ul);
-
-
+    scoreRecord.prepend(ul);
 }
 
 
