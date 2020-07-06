@@ -53,16 +53,19 @@ function scoreHide() {
 function saveScore() {
 
     event.preventDefault();
+
     var temp = JSON.parse((localStorage.getItem("userData"))) || [];
-    console.log("Temp varialbe: "+temp);
+    console.log("Temp variable: "+temp);
+
     var userData = {
-        name: userName.value,
-        score: timerScore.textContent
+        Name: userName.value,
+        Score: timerScore.textContent
     }
+
     temp.push(userData);
     localStorage.setItem("userData", JSON.stringify(temp));
 
-
+    // Render an unordered list from the local storage array of scores
     var ul = document.createElement("ul");
     ul.innerHTML = userData + " " + " " + " " + timerScore.textContent;
     scoreRecord.prepend(ul);
@@ -70,9 +73,22 @@ function saveScore() {
 
 }
 
+function renderScores() {
+   
+    // Render an unordered list from the local storage array of scores
+    var scoresToRender = JSON.parse((localStorage.getItem("userData")));
+
+    var i = 0;
+    for (var i = 0; i < localStorage.length; i++) {
+    var ul = document.createElement("ul");
+    ul.textContent = scoresToRender[i].name + ":" + " " + scoresToRender[i].score;
+    scoreRecord.prepend(ul);
+    }
+}
+
 // A function here will have to pull the stored scores from the saveScore function and render them into an unordered list each time the page is reloaded, take from lines 66-68
 
-
+renderScores();
 
 // Idenitfying each answer element
 var answer1 = document.getElementById("a1");
