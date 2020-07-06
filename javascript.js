@@ -49,30 +49,28 @@ function scoreHide() {
 }
 
 
-
-
-// How to calculate high scores **** need to edit once timer is made, placeholder textContent value for now to avoid errors
-
-// Creating an object that will hold submissions for high scores
-
-// ******* Dunno what to do with this yet, how to make it update and change and save sequential scores in local storage? not sure how
-
-// var userScores = {
-//     Name: userName.value.trim(),
-//     Score: scoreTime.value
-//   };
-
-// What the submit button will do
+// What the submit button will do, including saving scores to an object in local storage
 function saveScore() {
+
     event.preventDefault();
-    localStorage.setItem("username", userName.value);
+    var temp = JSON.parse((localStorage.getItem("userData"))) || [];
+    console.log("Temp varialbe: "+temp);
+    var userData = {
+        name: userName.value,
+        score: timerScore.textContent
+    }
+    temp.push(userData);
+    localStorage.setItem("userData", JSON.stringify(temp));
+
+
     var ul = document.createElement("ul");
-    ul.innerHTML = userName.value + " " + " " + " " + timerScore.textContent;
+    ul.innerHTML = userData + " " + " " + " " + timerScore.textContent;
     scoreRecord.prepend(ul);
+    location.reload();
+
 }
 
-
-
+// A function here will have to pull the stored scores from the saveScore function and render them into an unordered list each time the page is reloaded, take from lines 66-68
 
 
 
@@ -161,9 +159,13 @@ function answerCorrect5() {
     }
 }
 
-// If the response is wrong, make the background of the response red
+// If the response is wrong, make the background of the response red and decrease the timer by 5 seconds
+
+let timeLeft = 75;
+
 function answerWrong() {
     this.classList.add("wrong");
+    timeLeft = timeLeft - 5;
 }
 
 // Starts the quiz
@@ -174,13 +176,12 @@ function startQuiz() {
 
     firstQuestion();
 
-    let timeLeft = 75;
 
     // A function to start the timer
     var goTime = setInterval(function() {
         timeLeft = timeLeft - 1;
         timerScore.textContent = "Time: " + timeLeft;
-        // Ends the quiz if timer reaches
+        // Ends the quiz if timer reaches 0
         if (timeLeft <= 0) {
             answerCorrect5();
             clearInterval(goTime);
@@ -221,7 +222,12 @@ function secondQuestion() {
     answer3.textContent=("Test2") 
     answer4.textContent=("Test2") 
 
-    // Adding event listeners for the answers/responses
+    // Adding event listeners for the answers/responses, removing old listeners to avoid function errors
+    answer1.removeEventListener("click", answerWrong);
+    answer2.removeEventListener("click", answerCorrect);
+    answer3.removeEventListener("click", answerWrong);
+    answer4.removeEventListener("click", answerWrong);
+
     answer1.addEventListener("click", answerWrong);
     answer2.addEventListener("click", answerWrong);
     answer3.addEventListener("click", answerCorrect2);
@@ -237,6 +243,11 @@ function thirdQuestion() {
     answer4.textContent=("Test3") 
 
     // Adding event listeners for the answers/responses
+    answer1.removeEventListener("click", answerWrong);
+    answer2.removeEventListener("click", answerWrong);
+    answer3.removeEventListener("click", answerCorrect2);
+    answer4.removeEventListener("click", answerWrong); 
+
     answer1.addEventListener("click", answerWrong);
     answer2.addEventListener("click", answerWrong);
     answer3.addEventListener("click", answerCorrect3);
@@ -252,6 +263,11 @@ function fourthQuestion() {
     answer4.textContent=("Test4") 
 
     // Adding event listeners for the answers/responses
+    answer1.removeEventListener("click", answerWrong);
+    answer2.removeEventListener("click", answerWrong);
+    answer3.removeEventListener("click", answerCorrect3);
+    answer4.removeEventListener("click", answerWrong);
+
     answer1.addEventListener("click", answerCorrect4);
     answer2.addEventListener("click", answerWrong);
     answer3.addEventListener("click", answerWrong);
@@ -267,6 +283,11 @@ function fifthQuestion() {
     answer4.textContent=("Test5") 
 
     // Adding event listeners for the answers/responses
+    answer1.removeEventListener("click", answerCorrect4);
+    answer2.removeEventListener("click", answerWrong);
+    answer3.removeEventListener("click", answerWrong);
+    answer4.removeEventListener("click", answerWrong);
+
     answer1.addEventListener("click", answerWrong);
     answer2.addEventListener("click", answerCorrect5);
     answer3.addEventListener("click", answerWrong);
