@@ -3,6 +3,8 @@
 
 The idea is to create a timed quiz application that asks questions about javascript. The application should display a question with multiple choice responses. When the user clicks a response, there will be feedback. A correct response will display the next question, and an incorrect response will subtract from the time remaining. At the end, a score is generated based on the remaining time and locally stored on a list of high scores, which the user can choose to view.
 
+![image](https://user-images.githubusercontent.com/65047802/86645390-37791000-bf93-11ea-9e7c-fc819e2b90e0.png)
+
 ---
 
 ## Getting Started
