@@ -39,6 +39,8 @@ function scoreShow() {
     scoreElement.classList.remove("hidden");
     scoreElement.classList.add("scoreList");
     back.classList.remove("hidden");
+    renderScores();
+
 }
 
 function scoreHide() {
@@ -84,7 +86,6 @@ function renderScores() {
 
 // A function here will have to pull the stored scores from the saveScore function and render them into an unordered list each time the page is reloaded
 
-renderScores();
 
 // Idenitfying each answer element
 var answer1 = document.getElementById("a1");
