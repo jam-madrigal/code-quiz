@@ -73,8 +73,9 @@ function renderScores() {
     // Render an unordered list from the local storage array of scores
     var scoresToRender = JSON.parse((localStorage.getItem("userData")));
 
+    // Append an unordered list for each score entry to the hidden high scores element
     for (var i = 0; i < scoresToRender.length; i++) {
-    // scoresToRender.sort(); make this sort the by highest time remaining
+    // scoresToRender.sort(); later, make this sort the by highest time remaining
     var ul = document.createElement("ul");
     ul.textContent = scoresToRender[i].Name + ":" + " " + scoresToRender[i].Score;
     scoreRecord.prepend(ul);
@@ -211,11 +212,11 @@ function startQuiz() {
 
 // Displays the first question
 function firstQuestion() {
-    questionsElement.textContent=("What is x?");
-    answer1.textContent=("Test") 
-    answer2.textContent=("Test")
-    answer3.textContent=("Test") 
-    answer4.textContent=("Test")
+    questionsElement.textContent=("Which html tag is required to enable javascript code?");
+    answer1.textContent=("<div>") 
+    answer2.textContent=("<script>")
+    answer3.textContent=("<head>") 
+    answer4.textContent=("<javascript>")
     
     // Adding event listeners for the answers/responses
     answer1.addEventListener("click", answerWrong);
@@ -227,11 +228,11 @@ function firstQuestion() {
 
 // Displays the second question
 function secondQuestion() {
-    questionsElement.textContent=("What is 2?");
-    answer1.textContent=("Test2") 
-    answer2.textContent=("Test2") 
-    answer3.textContent=("Test2") 
-    answer4.textContent=("Test2") 
+    questionsElement.textContent=("Complete the sentence in a way that best fits our quotes from class: \"Javascript can be used to traverse the ___?");
+    answer1.textContent=("Sea") 
+    answer2.textContent=("Source") 
+    answer3.textContent=("DOM") 
+    answer4.textContent=("Client") 
 
     // Adding event listeners for the answers/responses, removing old listeners to avoid function errors
     answer1.removeEventListener("click", answerWrong);
@@ -247,11 +248,11 @@ function secondQuestion() {
 }
 
 function thirdQuestion() {
-    questionsElement.textContent=("What is 3?");
-    answer1.textContent=("Test3") 
-    answer2.textContent=("Test3") 
-    answer3.textContent=("Test3") 
-    answer4.textContent=("Test3") 
+    questionsElement.textContent=("Select the example with proper syntax for creating a new variable in JavaScript.");
+    answer1.textContent=("var i:0,") 
+    answer2.textContent=("for i = 0;") 
+    answer3.textContent=("var i = 0;") 
+    answer4.textContent=("function (i) =") 
 
     // Adding event listeners for the answers/responses
     answer1.removeEventListener("click", answerWrong);
@@ -267,11 +268,11 @@ function thirdQuestion() {
 }
 
 function fourthQuestion() {
-    questionsElement.textContent=("What is 4?");
-    answer1.textContent=("Test4") 
-    answer2.textContent=("Test4") 
-    answer3.textContent=("Test4") 
-    answer4.textContent=("Test4") 
+    questionsElement.textContent=("Which of the following would properly function to identify an HTML element by Id?");
+    answer1.textContent=("document.getElementById");
+    answer2.textContent=("document.getElementByClass");
+    answer3.textContent=("document.getelementByiD");
+    answer4.textContent=("document.querySelector");
 
     // Adding event listeners for the answers/responses
     answer1.removeEventListener("click", answerWrong);
@@ -287,11 +288,11 @@ function fourthQuestion() {
 }
 
 function fifthQuestion() {
-    questionsElement.textContent=("What is 5?");
-    answer1.textContent=("Test5") 
-    answer2.textContent=("Test5") 
-    answer3.textContent=("Test5") 
-    answer4.textContent=("Test5") 
+    questionsElement.textContent=("Which of the following will provide the user with a box in which to type?");
+    answer1.textContent=("alert(\"Hello)");
+    answer2.textContent=("prompt(\"What is your name?)");
+    answer3.textContent=(".addEventListener(\"KeyboardEvent)"); 
+    answer4.textContent=(".textContent=(\"Type here)");
 
     // Adding event listeners for the answers/responses
     answer1.removeEventListener("click", answerCorrect4);
