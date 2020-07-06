@@ -55,7 +55,6 @@ function saveScore() {
     event.preventDefault();
 
     var temp = JSON.parse((localStorage.getItem("userData"))) || [];
-    console.log("Temp variable: "+temp);
 
     var userData = {
         Name: userName.value,
@@ -65,10 +64,6 @@ function saveScore() {
     temp.push(userData);
     localStorage.setItem("userData", JSON.stringify(temp));
 
-    // Render an unordered list from the local storage array of scores
-    var ul = document.createElement("ul");
-    ul.innerHTML = userData + " " + " " + " " + timerScore.textContent;
-    scoreRecord.prepend(ul);
     location.reload();
 
 }
@@ -78,15 +73,15 @@ function renderScores() {
     // Render an unordered list from the local storage array of scores
     var scoresToRender = JSON.parse((localStorage.getItem("userData")));
 
-    var i = 0;
-    for (var i = 0; i < localStorage.length; i++) {
+    for (var i = 0; i < scoresToRender.length; i++) {
+    // scoresToRender.sort(); make this sort the by highest time remaining
     var ul = document.createElement("ul");
-    ul.textContent = scoresToRender[i].name + ":" + " " + scoresToRender[i].score;
+    ul.textContent = scoresToRender[i].Name + ":" + " " + scoresToRender[i].Score;
     scoreRecord.prepend(ul);
     }
 }
 
-// A function here will have to pull the stored scores from the saveScore function and render them into an unordered list each time the page is reloaded, take from lines 66-68
+// A function here will have to pull the stored scores from the saveScore function and render them into an unordered list each time the page is reloaded
 
 renderScores();
 
